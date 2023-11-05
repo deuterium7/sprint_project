@@ -476,8 +476,8 @@ describe('AppController (e2e)', () => {
       .post('/admin/cars')
       .set('Authorization', `Bearer ${access_token}`)
       .send({
-        category_id: category_id, // Comment @Validate(CategoryExists) for test
-        brand_id: brand_id, // Comment @Validate(BrandExists) for test
+        category_id: category_id,
+        brand_id: brand_id,
         name: faker.string.uuid(),
         description: faker.word.words({ count: { min: 3, max: 12 } }),
         price: faker.number.int({ min: 1, max: 100000 }),
@@ -731,8 +731,8 @@ describe('AppController (e2e)', () => {
       .post('/api/cars')
       .set('Authorization', `Bearer ${access_token}`)
       .send({
-        category_id: category_id, // Comment @Validate(CategoryExists) for test
-        brand_id: brand_id, // Comment @Validate(BrandExists) for test
+        category_id: category_id,
+        brand_id: brand_id,
         name: faker.string.uuid(),
         description: faker.word.words({ count: { min: 3, max: 12 } }),
         price: faker.number.int({ min: 1, max: 100000 }),

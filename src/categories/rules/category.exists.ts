@@ -16,7 +16,7 @@ export class CategoryExists implements ValidatorConstraintInterface {
       const category = await this.categoriesService.findOne(value);
       return Boolean(category);
     } catch (e) {
-      return false;
+      return true;
     }
   }
 

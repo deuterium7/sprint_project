@@ -16,7 +16,7 @@ export class BrandExists implements ValidatorConstraintInterface {
       const brand = await this.brandsService.findOne(value);
       return Boolean(brand);
     } catch (e) {
-      return false;
+      return true;
     }
   }
 

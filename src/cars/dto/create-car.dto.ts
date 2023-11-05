@@ -16,7 +16,7 @@ export class CreateCarDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(1)
-  @Validate(CategoryExists) // Comment for testing
+  @Validate(CategoryExists)
   @ApiProperty({
     description: 'ID категории',
     minimum: 1,
@@ -26,7 +26,7 @@ export class CreateCarDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(1)
-  @Validate(BrandExists) // Comment for testing
+  @Validate(BrandExists)
   @ApiProperty({
     description: 'ID марки',
     minimum: 1,
