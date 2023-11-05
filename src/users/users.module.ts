@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { AdminUsersController } from './admin.users.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
-import { UserAlreadyExistsRule } from './user.already.exists';
+import { UserAlreadyExistsRule } from './rules/user.already.exists';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],

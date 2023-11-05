@@ -4,7 +4,7 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { UsersService } from './users.service';
+import { UsersService } from '../users.service';
 
 @ValidatorConstraint({ name: 'UserAlreadyExists', async: true })
 @Injectable()
@@ -14,13 +14,13 @@ export class UserAlreadyExistsRule implements ValidatorConstraintInterface {
   async validate(value: string) {
     try {
       const user = await this.usersService.findOneByEmail(value);
-      return !Boolean(user);
+      return !user;
     } catch (e) {
       return true;
     }
   }
 
   defaultMessage(args: ValidationArguments) {
-    return `User already exist`;
+    return `User already exists`;
   }
 }

@@ -11,14 +11,14 @@ import {
   MinLength,
   Validate,
 } from 'class-validator';
-import { CategoryExistsRule } from 'src/categories/category.exists';
-import { BrandExistsRule } from 'src/brands/brand.exists';
+import { CategoryExists } from 'src/categories/rules/category.exists';
+import { BrandExists } from 'src/brands/rules/brand.exists';
 
 export class UpdateCarDto {
   @IsOptional()
   @IsNumber()
   @Min(1)
-  @Validate(CategoryExistsRule)
+  @Validate(CategoryExists) // Comment for testing
   @ApiProperty({
     description: 'ID категории',
     minimum: 1,
@@ -28,7 +28,7 @@ export class UpdateCarDto {
   @IsOptional()
   @IsNumber()
   @Min(1)
-  @Validate(BrandExistsRule)
+  @Validate(BrandExists) // Comment for testing
   @ApiProperty({
     description: 'ID марки',
     minimum: 1,

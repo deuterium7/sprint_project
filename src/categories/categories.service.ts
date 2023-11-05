@@ -24,6 +24,10 @@ export class CategoriesService {
     return this.repository.findOneBy({ id });
   }
 
+  findOneByName(name: string): Promise<Category | null> {
+    return this.repository.findOneBy({ name });
+  }
+
   update(id: number, data: UpdateCategoryDto): Promise<Category> {
     return this.repository.save({ ...data, id });
   }

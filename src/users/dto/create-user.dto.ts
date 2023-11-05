@@ -7,7 +7,7 @@ import {
   MinLength,
   Validate,
 } from 'class-validator';
-import { UserAlreadyExistsRule } from '../user.already.exists';
+import { UserAlreadyExistsRule } from '../rules/user.already.exists';
 
 export class CreateUserDto {
   @IsNotEmpty()

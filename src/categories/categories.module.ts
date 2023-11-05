@@ -4,12 +4,12 @@ import { CategoriesController } from './categories.controller';
 import { AdminCategoriesController } from './admin.categories.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Category } from './entities/category.entity';
-import { CategoryExistsRule } from './category.exists';
+import { CategoryExists } from './rules/category.exists';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Category])],
   controllers: [CategoriesController, AdminCategoriesController],
-  providers: [CategoriesService, CategoryExistsRule],
-  exports: [CategoriesService, CategoryExistsRule],
+  providers: [CategoriesService, CategoryExists],
+  exports: [CategoriesService, CategoryExists],
 })
 export class CategoriesModule {}

@@ -4,11 +4,11 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { CategoriesService } from './categories.service';
+import { CategoriesService } from '../categories.service';
 
 @ValidatorConstraint({ name: 'CategoryExists', async: true })
 @Injectable()
-export class CategoryExistsRule implements ValidatorConstraintInterface {
+export class CategoryExists implements ValidatorConstraintInterface {
   constructor(private categoriesService: CategoriesService) {}
 
   async validate(value: number) {
@@ -21,6 +21,6 @@ export class CategoryExistsRule implements ValidatorConstraintInterface {
   }
 
   defaultMessage(args: ValidationArguments) {
-    return `Category doesn't exist`;
+    return `Category doesn't exists`;
   }
 }

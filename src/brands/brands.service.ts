@@ -24,6 +24,10 @@ export class BrandsService {
     return this.repository.findOneBy({ id });
   }
 
+  findOneByName(name: string): Promise<Brand | null> {
+    return this.repository.findOneBy({ name });
+  }
+
   update(id: number, data: UpdateBrandDto): Promise<Brand> {
     return this.repository.save({ ...data, id });
   }

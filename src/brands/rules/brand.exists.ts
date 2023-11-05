@@ -4,11 +4,11 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { BrandsService } from './brands.service';
+import { BrandsService } from '../brands.service';
 
 @ValidatorConstraint({ name: 'BrandExists', async: true })
 @Injectable()
-export class BrandExistsRule implements ValidatorConstraintInterface {
+export class BrandExists implements ValidatorConstraintInterface {
   constructor(private brandsService: BrandsService) {}
 
   async validate(value: number) {

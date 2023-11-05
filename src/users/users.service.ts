@@ -30,6 +30,23 @@ export class UsersService {
     return this.repository.findOneBy({ email });
   }
 
+  async getAdmin(email: string): Promise<User> {
+    let admin = await this.findOneByEmail(email);
+
+    if (!admin) {
+      const password = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
+
+      admin = await this.repository.save({
+        name: 'ADMIN',
+        email: process.env.ADMIN_EMAIL,
+        role: userRoleEnum.admin,
+        password: password,
+      });
+    }
+
+    return admin;
+  }
+
   update(id: number, data: UpdateUserDto): Promise<User> {
     return this.repository.save({ ...data, id });
   }

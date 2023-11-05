@@ -84,7 +84,7 @@ export class Car {
   category: Category;
 
   @ManyToOne(() => Brand, (brand) => brand.cars, {
-    eager: true,
+    eager: false,
     nullable: false,
     onDelete: 'CASCADE',
   })
